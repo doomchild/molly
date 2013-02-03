@@ -1,0 +1,8 @@
+# Ignore the bin directory
+bin
+# Ignore files ending with ~ (usually emacs backups)
+*~
+
+Makefile
+*.cmake
+CMakeFiles
