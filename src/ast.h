@@ -2,9 +2,11 @@
 
 #include <glib.h>
 
+enum NodeType { Open, Close, Whitespace, Symbol };
+
 typedef struct
 {
-  char* node_type;
+  enum NodeType node_type;
   char* node_value;
 } ast_node;
 

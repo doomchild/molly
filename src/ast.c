@@ -11,7 +11,6 @@ ast_node* ast_node_alloc()
 
 void free_ast_node(ast_node* node)
 {
-  free(node->node_type);
   free(node->node_value);
   free(node);
 }
@@ -28,17 +27,17 @@ GSList* GetASTList(GSList* tokenList)
 
 	if(value[0] == '(')
 	{
-	    node->node_type = "Open\0";
+	    node->node_type = Open;
 	    node->node_value = "(\0";
 	}
 	else if(value[0] == ')')
 	{
-	    node->node_type = "Close\0";
+	    node->node_type = Close;
 	    node->node_value = ")\0";
 	}
 	else if(isspace(value[0]))
 	{
-	    node->node_type = "Whitespace\0";
+	    node->node_type = Whitespace;
 	    node->node_value = (char*)calloc(sizeof(char), 2);
 	    node->node_value[0] = value[0];
 	    node->node_value[1] = '\0';
@@ -47,7 +46,7 @@ GSList* GetASTList(GSList* tokenList)
 	{
 	    size_t len = strlen(value);
 
-	    node->node_type = "Symbol\0";
+	    node->node_type = Symbol;
 	    node->node_value = (char*)calloc(sizeof(char), len + 1);
 
 	    strncpy(node->node_value, value, len);

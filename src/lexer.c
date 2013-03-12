@@ -5,6 +5,9 @@
 #include <ctype.h>
 #include "ast.h"
 
+#define molly_VERSION_MAJOR 0
+#define molly_VERSION_MINOR 1
+
 GSList* Tokenize(char* input, size_t len)
 {
     GSList* elementList = NULL;
@@ -79,7 +82,7 @@ int main(int argc, char** argv)
 	}
     }
     else
-	printf("%s Version %d.%d\n", argv[0], 0, 1);
+	printf("%s Version %d.%d\n", argv[0], molly_VERSION_MAJOR, molly_VERSION_MINOR);
 
     return 0;
 }
