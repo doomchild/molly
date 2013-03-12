@@ -1,13 +1,15 @@
+#pragma once
+
 #include <glib.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include "type.h"
 
-typedef struct Numeric
+typedef struct
 {
     Type type;
     uint16_t flags;
     void *value;
-};
+} MNumeric;
 
-Numeric* Numeric_New();
+MNumeric* MNumeric_New();

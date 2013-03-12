@@ -1,8 +1,8 @@
 #include "num_type.h"
 
-Numeric* Numeric_New()
+MNumeric* MNumeric_New()
 {
-    Numeric* retVal = (Numeric*)calloc(1, sizeof(Numeric));
+    MNumeric* retVal = (MNumeric*)calloc(1, sizeof(MNumeric));
 
     return retVal;
 }
